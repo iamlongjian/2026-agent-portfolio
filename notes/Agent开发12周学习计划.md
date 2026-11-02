@@ -105,6 +105,21 @@
 - [ ] 看 2~3 个 B 站 LangGraph 入门视频，建立直观印象
 - [ ] 画出一个最简对话 Agent 的状态流转图
 
+> **📖 本周只读 2 页，不要刷整个侧边栏**
+> 新站 JS 版 LangGraph 章节共 **35 页**，全读就是"教程地狱"，而且大部分内容你现在的阶段用不上。
+>
+> | 顺序 | 页面 | 说明 |
+> | --- | --- | --- |
+> | 1️⃣ 主读 | [Quickstart](https://docs.langchain.com/oss/javascript/langgraph/quickstart) | 约 6k 词，跟着做出一个计算器 Agent |
+> | 2️⃣ 配合读 | [Thinking in LangGraph](https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph) | 约 7k 词，讲 State/Node/Edge **怎么设计** |
+>
+> 两页合计约 40~60 分钟精读，正好一天的量。
+>
+> **其余页面按周次解锁，不要提前读**：
+> `graph-api`（1.5 万字，当**手册**查，不通读）· 工具/ReAct → 第 2 周 · `fault-tolerance` → 第 3 周 · `interrupts`/`persistence`/`checkpointers` → 第 4 周 · `agentic-rag` → 第 6 周 · `streaming`/`frontend/*`/`ui` → 第 1 周周末
+>
+> **永远不通读**（纯参考手册）：`pregel`、`stores`、`use-subgraphs`、`use-time-travel`、`deploy`、`studio`、`observability`、`test`、`functional-api`、`sql-agent` 等
+
 **周末（实操 6~8h）**
 
 - [ ] 用 TS 跑通 LangGraph 最简对话示例（不带工具）
@@ -365,11 +380,15 @@
 
 | 资源 | 链接 | 用途 |
 | --- | --- | --- |
-| LangGraph.js 官方文档 | https://langchain-ai.github.io/langgraphjs/ | 主干文档。**注意是 `langgraphjs`（JS 版独立站），不是 `langgraph`（那是 Python 版）** |
-| LangGraph.js Quickstart | https://langchain-ai.github.io/langgraphjs/tutorials/quickstart/ | **第 1 周就读这个** |
-| LangGraph JS 概览 | https://docs.langchain.com/oss/javascript/langgraph/overview | 官方正在迁移的新文档站 |
-| LangGraph JS Quickstart（新站） | https://docs.langchain.com/oss/javascript/langgraph/quickstart | 同上，新版入口 |
-| LangChain.js 文档 | https://js.langchain.com/ | 工具调用、模型初始化在这里 |
+| LangGraph JS 官方文档 | https://docs.langchain.com/oss/javascript/langgraph/overview | ✅ **唯一有效站点**，官方已迁移至此 |
+| LangGraph JS Quickstart | https://docs.langchain.com/oss/javascript/langgraph/quickstart | **第 1 周主读这个** |
+| Thinking in LangGraph | https://docs.langchain.com/oss/javascript/langgraph/thinking-in-langgraph | 第 1 周配合读，专讲 State/Node/Edge 怎么设计 |
+| LangChain JS 文档 | https://docs.langchain.com/oss/javascript/langchain/overview | 工具调用、模型初始化在这里 |
+
+> ⚠️ **旧站已废弃**：`langchain-ai.github.io/langgraphjs/` 官方已弃用，访问会自动跳转到新站。
+> 注意它用的是 **JS 跳转**（不是 HTTP 301），所以链接检测工具会误报为"正常"。**直接用上面的 `docs.langchain.com` 地址**。
+>
+> `js.langchain.com` 也是旧站（HTTP 308 跳转到上面的新地址），能用但多一跳，建议直接用最终地址。
 
 **中文社区（已筛选）**
 
