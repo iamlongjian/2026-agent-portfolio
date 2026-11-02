@@ -346,14 +346,82 @@
 
 ***
 
-## 附：配套免费资源清单（不用报班）
+## 附：配套学习资源清单（已验证可用）
 
-1. LangGraph 官方文档：https://langchain-ai.github.io/langgraph/
-2. LangChain JS 文档
-3. React Flow（拖拽画布）官方示例
-4. Dify Github 仓库
-5. B 站：LangGraph TS 实战、RAG 工程化落地（选近一年、代码跟着敲的）
-6. 社区：LangChain Discord、掘金 AI 应用板块
+> **验证说明**：下列链接均于 2026-11-02 实测可访问。标注 ⚠️ 的为非官方来源，版本可能滞后。
+>
+> **⚠️ 必须先知道的现实**：中文 LangGraph 资料 90% 是 **Python 版**，官方**没有中文文档**。你搜"LangGraph 中文教程"，点进去十有八九是 `add_edge()` 而不是 `addEdge()`。
+> **策略**：官方英文文档当主干（代码直接抄），中文文章只用来理解概念。
+
+**通用原则**
+
+- 优先官方文档，其次社区教程
+- **CSDN 现大量 AI 洗稿**：标题雷同、内容拼凑，尽量避开（本清单已筛掉几十篇）
+- 中文翻译站非官方，API 与版本可能对不上，**冲突时一律以官方为准**
+
+### 第 1 阶段（周 1~4）· LangGraph 核心
+
+**官方（英文，唯一权威来源）**
+
+| 资源 | 链接 | 用途 |
+| --- | --- | --- |
+| LangGraph.js 官方文档 | https://langchain-ai.github.io/langgraphjs/ | 主干文档。**注意是 `langgraphjs`（JS 版独立站），不是 `langgraph`（那是 Python 版）** |
+| LangGraph.js Quickstart | https://langchain-ai.github.io/langgraphjs/tutorials/quickstart/ | **第 1 周就读这个** |
+| LangGraph JS 概览 | https://docs.langchain.com/oss/javascript/langgraph/overview | 官方正在迁移的新文档站 |
+| LangGraph JS Quickstart（新站） | https://docs.langchain.com/oss/javascript/langgraph/quickstart | 同上，新版入口 |
+| LangChain.js 文档 | https://js.langchain.com/ | 工具调用、模型初始化在这里 |
+
+**中文社区（已筛选）**
+
+- ⭐ [LangGraph TypeScript 版入门与实践 · 腾讯云](https://cloud.tencent.com/developer/article/2651303)
+  — **已核实为真 TS 版**（实测使用 `addEdge`/`addConditionalEdges` 驼峰 API，非 Python 转述），中文资料里极难得，**优先看这篇**
+- [LangGraph 保姆级教程 · 掘金](https://juejin.cn/post/7579264485258854415)
+  — 概念讲得清楚，代码是 Python，当"看图理解"用
+
+### 第 2 阶段（周 5~8）· RAG
+
+**官方**
+
+- [Qdrant 官方文档](https://qdrant.tech/documentation/) · [Quickstart](https://qdrant.tech/documentation/quickstart/) — 你的向量库选型
+- [LangChain 官方 · Retrieval 检索](https://docs.langchain.com/oss/python/langchain/retrieval) — 分块 / 嵌入 / 检索的完整概念（Python）
+
+**中文**
+
+- [LangChain 中文网 · 使用指南](https://www.langchain.com.cn/docs/how_to/) — ⚠️ 社区翻译站（实测稳定），非官方
+- [RAG + LangChain 企业级知识库实战 · 阿里云](https://developer.aliyun.com/article/1755975)
+- [手把手搞懂 RAG · 掘金](https://juejin.cn/post/7660920283885518875) — 入门友好
+
+> ❌ **已剔除**：`python.langchain.ac.cn` —— 实测 3 次请求失败 2 次，站点不稳定，且内容停留在 v0.1 老版本，不要用。
+
+### 第 7 周 · Dify（国产，中文资料质量最好）
+
+**官方中文文档**
+
+- [Dify 官方文档 · 中文首页](https://docs.dify.ai/zh/home)
+- [Dify 使用文档（工作流 / 知识库）](https://docs.dify.ai/zh/cloud/use-dify)
+- [工作流教程合集](https://docs.dify.ai/zh/learn/tutorials)
+- [Workflow 101 · 第 1 课](https://docs.dify.ai/zh/learn/tutorials/workflow-101/lesson-01) — 从这课顺着往下
+- [插件开发入门](https://docs.dify.ai/zh/develop-plugin/getting-started/getting-started-dify-plugin) — 对应"开发自定义工具"那周
+- [工作区插件管理](https://docs.dify.ai/zh/cloud/use-dify/workspace/plugins)
+
+### 第 3 阶段（周 9~12）· React Flow
+
+- [React Flow 官方学习指南](https://reactflow.dev/learn) — 权威来源，英文
+- ⚠️ [React Flow 中文 · 快速入门](https://flow.reactjs.ac.cn/learn) — 社区翻译镜像（实测已跟进 v12.x），**非官方**，API 对不上时以官方为准
+- ⚠️ [React Flow 中文（备用镜像）](https://reactflow-cn.js.org/learn) — 同上
+
+> 你 7 年 React 底子，建议直接读官方英文。镜像站的价值是查术语中文译名。
+
+### 大模型 API（周末写代码要用）
+
+- [DeepSeek API 文档](https://api-docs.deepseek.com/) — 便宜，适合练手
+- [阿里云百炼（通义）文档](https://help.aliyun.com/zh/model-studio/) — 有免费额度
+
+### 视频与社区
+
+- **B 站**：搜索「LangGraph TS 实战」「RAG 工程化落地」，按**近一年 + 代码跟着敲**的标准筛选
+  （B 站会拦截自动检测，无法预先验证链接，需你自己确认）
+- **社区**：LangChain Discord、掘金 AI 应用板块
 
 ## 附：卡点预案（重要）
 
