@@ -48,8 +48,23 @@
   - Demo2 RAG 知识库 → **Qdrant Cloud 免费版**（原生向量库，LangChain TS 对接资料最多，首选）
   - Demo3 编排面板如需同时存业务数据（工作流模板、对话历史）→ 再考虑 **Supabase（Postgres + pgvector）**
   - ⚠️ 避坑：向量库只存向量与原始文本、提供检索 API，不托管网页/代码，别把它当服务器用
-- [ ] 部署拆分方案落地：前端 → Vercel；LangGraph/RAG 后端 → Render；RAG 向量数据 → Qdrant Cloud
-- [ ] 新建 Github 仓库 `agent-portfolio`，所有项目放这里，README 写演示链接、技术栈、踩坑记录
+- [ ] 部署拆分方案落地（**从 Demo0 起就执行，中途不改**）：前端 → Vercel；LangGraph/RAG 后端（SSE）→ Render；RAG 向量数据 → Qdrant Cloud
+- [ ] 新建 Github 仓库，所有项目放这里，README 写演示链接、技术栈、踩坑记录
+- [ ] 仓库目录结构（**周末动手前先想好，照着建**）：
+
+  ```
+  2026-agent-portfolio/
+  ├── README.md              # 作品集首页（第 12 周完善）
+  ├── notes/                 # 学习笔记、周复盘
+  ├── demo0-chat/            # 第 1 周：最简流式对话
+  │   ├── web/               → Vercel
+  │   └── server/            → Render（SSE 后端）
+  ├── demo1-react-agent/     # 第 2~4 周：工具调用 + ReAct + 人工确认
+  ├── demo2-rag/             # 第 5~8 周：RAG 知识库问答
+  └── demo3-flow-builder/    # 第 9~12 周：可视化编排面板
+  ```
+
+  > 每个 demo 独立目录、独立 `package.json`，互不干扰，也方便单独部署。
 
 ### Claude Code 使用规范（面试护城河，务必遵守）
 
@@ -95,9 +110,13 @@
 - [ ] 用 TS 跑通 LangGraph 最简对话示例（不带工具）
 - [ ] 搭一个极简 React 对话页，实现 SSE 流式输出
 - [ ] 打断点看每一轮 state 怎么变化
-- [ ] 部署到 Vercel，写 README
+- [ ] **部署（注意拆两半）**：前端 `demo0-chat/web/` → **Vercel**；SSE 后端 `demo0-chat/server/` → **Render**
+  - 先本地 `localhost` 前后端跑通，再上 Render，最后前端指向后端线上地址
+- [ ] 写 README：架构图 + 线上链接 + 踩坑记录
 
 ✅ **产出：Demo0 最简流式对话页**
+
+> ⚠️ **别把 SSE 后端塞进 Vercel**：Vercel Serverless 有执行时长上限，长流式会中途断流（详见「前置准备」的部署拆分说明）。Demo0 起就按前端 Vercel / 后端 Render 拆开，避免后面返工。
 
 > **自查**：能否口头讲清楚"Agent 和普通调用 LLM 接口的区别"？
 
@@ -117,7 +136,7 @@
 - [ ] 在 Demo0 基础上加一个计算器工具
 - [ ] 实现：用户提问 → LLM 判断是否调用工具 → 执行 → 返回结果继续回答
 - [ ] 前端加一块"思考过程"展示区，打印每一步
-- [ ] 调试通过后部署更新
+- [ ] 调试通过后部署更新（前端 → Vercel，后端 → Render）
 
 ✅ **产出：Demo1a 带单工具的 ReAct Agent**
 
