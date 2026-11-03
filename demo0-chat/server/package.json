@@ -1,0 +1,31 @@
+{
+  "name": "demo0-chat-server",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx src/index.ts",
+    "check": "tsx test-connection.ts",
+    "start": "tsx src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Demo0: LangGraph 最简流式对话后端",
+  "type": "module",
+  "dependencies": {
+    "@langchain/core": "^1.3.4",
+    "@langchain/deepseek": "^1.1.21",
+    "@langchain/langgraph": "^1.6.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
