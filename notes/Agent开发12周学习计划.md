@@ -36,6 +36,14 @@
 - 周日上午：部署 + 写 README
 - 周日下午：查漏补缺、记踩坑
 
+### ⚠️ 规划铁律：从周末任务倒推周内学习
+
+> **每周规划时，先列周末要写的代码用到哪些技术，再把每一项放进周内的学习清单。**
+>
+> 反例（第 1 周踩过的坑）：周末要写 SSE 流式输出，但周内学习清单里没有 SSE —— 结果周末只能抄代码，学不到东西。
+>
+> **检查方法**：周末任务里的每个动词（"实现 SSE"、"调用接口"、"部署"），都要能在周内找到对应的学习项。找不到，就是规划漏了。
+
 ### 前置准备（第 1 周抽空一次性完成）
 
 - [x] Node 20+、Git、VSCode
@@ -97,6 +105,45 @@
 > 核心：先补概念，再动手；把 LLM 调用、Tool、ReAct、状态机搞明白，不碰 RAG。
 
 ### 第 1 周｜Agent 到底是什么
+
+#### 📌 前置知识（周末动手前必须补）
+
+> **这些是周末任务的依赖。** 不补的话，周末会卡在"概念都不懂，只能抄代码"。
+> 已经会的直接划掉，不要重学浪费时间。
+
+| # | 知识点 | 为什么需要 | 预计 | 自测标准 |
+| --- | --- | --- | --- | --- |
+| 1 | **HTTP 请求 / 响应** | 后端接口的底座 | 20 min | 能说出 GET 和 POST 的区别 |
+| 2 | **SSE（Server-Sent Events）** | 流式输出的协议 | 40 min | 能写出 `data: xxx\n\n` 的事件格式 |
+| 3 | **fetch + ReadableStream** | 前端接收流式数据 | 40 min | 能说出为什么 `EventSource` 在这里不能用 |
+| 4 | **Node 服务端 / Express 基础** | 写后端接口 | 1 h | 能独立起一个返回 JSON 的 `GET /health` |
+| 5 | **环境变量与 .env** | 存放 API Key | 15 min | 能说出为什么 `.env` 不能进 git |
+| 6 | **TypeScript 基础** | 官方示例全是 TS | 见下 | — |
+
+**合计约 2.5 小时**，可以拆到周内两个晚上。
+
+#### 关于 TypeScript（重要）
+
+**你的计划原本假设"TS/React 为主"，但你实际没写过 TS。**
+
+两条路：
+
+| 方案 | 做法 | 优缺点 |
+| --- | --- | --- |
+| **A（Demo0 期间采用）** | 写**纯 JS 语法**，文件仍用 `.ts` 扩展名 | 优点：不卡进度。缺点：作品集缺 TS |
+| **B（第 2 周开始补）** | 花 3 小时学：类型标注 `: string`、泛型 `<T>`、`interface`、`as` | 优点：面试硬门槛。缺点：前期慢 |
+
+> **7 年前端不会 TS 是面试明显短板。** Demo0 先走 A 跑通，第 2 周前补 B，不要拖到第 12 周。
+
+#### 学习资源（已验证）
+
+| 知识点 | 资源 | 说明 |
+| --- | --- | --- |
+| SSE | [MDN · Server-sent events](https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events/Using_server-sent_events) | 官方中文，看「使用服务器发送事件」一节 |
+| ReadableStream | [MDN · ReadableStream](https://developer.mozilla.org/zh-CN/docs/Web/API/ReadableStream) | 重点看 `getReader()` |
+| fetch 流式 | [MDN · Response.body](https://developer.mozilla.org/zh-CN/docs/Web/API/Response/body) | 这里说明 body 是流 |
+| Express | [Express 中文文档](https://www.expressjs.com.cn/starter/hello-world.html) | 只要看到"Hello World"能跑即可 |
+| TS | [TS 中文手册 · 基础类型](https://www.tslang.cn/docs/handbook/basic-types.html) | 第 2 周补，现在不看 |
 
 **周内（无代码）**
 
